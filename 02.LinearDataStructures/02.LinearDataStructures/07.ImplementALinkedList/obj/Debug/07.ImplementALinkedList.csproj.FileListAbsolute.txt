@@ -1,0 +1,6 @@
+D:\OnCode\DataStructures&Algorithms\02.LinearDataStructures\02.LinearDataStructures\07.ImplementALinkedList\bin\Debug\07.ImplementALinkedList.exe.config
+D:\OnCode\DataStructures&Algorithms\02.LinearDataStructures\02.LinearDataStructures\07.ImplementALinkedList\obj\Debug\07.ImplementALinkedList.csprojResolveAssemblyReference.cache
+D:\OnCode\DataStructures&Algorithms\02.LinearDataStructures\02.LinearDataStructures\07.ImplementALinkedList\bin\Debug\07.ImplementALinkedList.exe
+D:\OnCode\DataStructures&Algorithms\02.LinearDataStructures\02.LinearDataStructures\07.ImplementALinkedList\bin\Debug\07.ImplementALinkedList.pdb
+D:\OnCode\DataStructures&Algorithms\02.LinearDataStructures\02.LinearDataStructures\07.ImplementALinkedList\obj\Debug\07.ImplementALinkedList.exe
+D:\OnCode\DataStructures&Algorithms\02.LinearDataStructures\02.LinearDataStructures\07.ImplementALinkedList\obj\Debug\07.ImplementALinkedList.pdb

@@ -1,0 +1,6 @@
+D:\OnCode\DataStructures&Algorithms\02.LinearDataStructures\02.LinearDataStructures\06.ImplementTheDataStructureReversedList\bin\Debug\06.ImplementTheDataStructureReversedList.exe.config
+D:\OnCode\DataStructures&Algorithms\02.LinearDataStructures\02.LinearDataStructures\06.ImplementTheDataStructureReversedList\obj\Debug\06.ImplementTheDataStructureReversedList.csprojResolveAssemblyReference.cache
+D:\OnCode\DataStructures&Algorithms\02.LinearDataStructures\02.LinearDataStructures\06.ImplementTheDataStructureReversedList\bin\Debug\06.ImplementTheDataStructureReversedList.exe
+D:\OnCode\DataStructures&Algorithms\02.LinearDataStructures\02.LinearDataStructures\06.ImplementTheDataStructureReversedList\bin\Debug\06.ImplementTheDataStructureReversedList.pdb
+D:\OnCode\DataStructures&Algorithms\02.LinearDataStructures\02.LinearDataStructures\06.ImplementTheDataStructureReversedList\obj\Debug\06.ImplementTheDataStructureReversedList.exe
+D:\OnCode\DataStructures&Algorithms\02.LinearDataStructures\02.LinearDataStructures\06.ImplementTheDataStructureReversedList\obj\Debug\06.ImplementTheDataStructureReversedList.pdb

@@ -1,0 +1,68 @@
+Problem 1.	Add(T) Complexity
+Calculate the expected running time O(f(n)) of the Add(T) operation in the above code in the worst case.
+
+	1. var newArr = new T[this.arr.Length + 1]; 0(1)
+	2. Array.Copy(this.arr, newArr, this.arr.Length); 0(1)
+	3. newArr[newArr.Length - 1] = item; 0(n)
+	4. this.arr = newArr; 0(1)
+
+	Lines 1, 2, 4 have complexity 0(1)
+	Line 3 have complexity 0(n)
+
+	Add(T) complexity: 0(n)
+
+
+Problem 2.	Remove(index) Complexity – Worst Case
+Calculate the expected running time O(f(n)) of the Remove(index) operation in the worst case.
+
+	1. T result = this.arr[index]; 0(1)
+	2. var newArr = new T[this.arr.Length - 1]; 0(1)
+	3. Array.Copy(this.arr, newArr, index); 0(n)
+	4. Array.Copy(this.arr, index + 1, newArr, index, this.arr.Length - index - 1); 0(n)
+	5. this.arr = newArr; 0(1)
+	6. return result;
+
+	Remove(index) - Worst case: 0(n)
+	
+Problem 3.	Remove(index) Complexity – Best Case
+Calculate the expected running time O(f(n)) of the Remove(index) operation in the best case.
+
+	Best case = 0(n)
+	
+	
+Problem 4.	Remove(index) Complexity – Average Case
+Calculate the expected running time O(f(n)) of the Remove(index) operation in the average case.
+
+	Average case = 0(n)
+	
+	
+Problem 5.	RemoveFirst(T) Complexity
+Calculate the expected running time O(f(n)) of the RemoveFirst(T) operation. Submit the result in a text file.
+
+	Remove first = 0(n)
+	
+	
+Problem 6.	RemoveLast(T) Complexity
+Calculate the expected running time O(f(n)) of the RemoveLast(T) operation. Submit the result in a text file.
+
+	The same as the above = 0(n)
+	
+Problem 7.	Length Complexity
+Calculate the expected running time O(f(n)) of the Length operation. Submit the result in a text file.
+
+	Complexity: 0(1) because the length is stored in a class property -> it is simply returned
+	
+Problem 8.	This[index] Complexity
+Calculate the expected running time O(f(n)) of the operation this[index]. Submit the result in a text file.
+
+	Complexity: 0(1)
+	
+Problem 9.	First Complexity
+Calculate the expected running time O(f(n)) of the First operation. Submit the result in a text file.
+
+	Complexity: 0(1)
+	
+Problem 10.	Last Complexity
+Calculate the expected running time O(f(n)) of the Last operation. Submit the result in a text file.3
+
+	Complexity: 0(1)

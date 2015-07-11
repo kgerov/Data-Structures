@@ -1,0 +1,5 @@
+D:\OnCode\DataStructures&Algorithms\02.LinearDataStructures\02.LinearDataStructures\02.SortWords\bin\Debug\02.SortWords.exe.config
+D:\OnCode\DataStructures&Algorithms\02.LinearDataStructures\02.LinearDataStructures\02.SortWords\bin\Debug\02.SortWords.exe
+D:\OnCode\DataStructures&Algorithms\02.LinearDataStructures\02.LinearDataStructures\02.SortWords\bin\Debug\02.SortWords.pdb
+D:\OnCode\DataStructures&Algorithms\02.LinearDataStructures\02.LinearDataStructures\02.SortWords\obj\Debug\02.SortWords.exe
+D:\OnCode\DataStructures&Algorithms\02.LinearDataStructures\02.LinearDataStructures\02.SortWords\obj\Debug\02.SortWords.pdb

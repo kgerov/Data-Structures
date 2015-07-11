@@ -1,0 +1,6 @@
+D:\OnCode\DataStructures&Algorithms\02.LinearDataStructures\02.LinearDataStructures\02.LinearDataStructures\obj\Debug\01.SumAndAverage.csprojResolveAssemblyReference.cache
+D:\OnCode\DataStructures&Algorithms\02.LinearDataStructures\02.LinearDataStructures\02.LinearDataStructures\bin\Debug\02.LinearDataStructures.exe.config
+D:\OnCode\DataStructures&Algorithms\02.LinearDataStructures\02.LinearDataStructures\02.LinearDataStructures\bin\Debug\02.LinearDataStructures.exe
+D:\OnCode\DataStructures&Algorithms\02.LinearDataStructures\02.LinearDataStructures\02.LinearDataStructures\bin\Debug\02.LinearDataStructures.pdb
+D:\OnCode\DataStructures&Algorithms\02.LinearDataStructures\02.LinearDataStructures\02.LinearDataStructures\obj\Debug\02.LinearDataStructures.exe
+D:\OnCode\DataStructures&Algorithms\02.LinearDataStructures\02.LinearDataStructures\02.LinearDataStructures\obj\Debug\02.LinearDataStructures.pdb

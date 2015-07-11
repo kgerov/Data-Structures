@@ -1,0 +1,5 @@
+D:\OnCode\DataStructures&Algorithms\02.LinearDataStructures\02.LinearDataStructures\03.LongestSubsequence\bin\Debug\03.LongestSubsequence.exe.config
+D:\OnCode\DataStructures&Algorithms\02.LinearDataStructures\02.LinearDataStructures\03.LongestSubsequence\bin\Debug\03.LongestSubsequence.exe
+D:\OnCode\DataStructures&Algorithms\02.LinearDataStructures\02.LinearDataStructures\03.LongestSubsequence\bin\Debug\03.LongestSubsequence.pdb
+D:\OnCode\DataStructures&Algorithms\02.LinearDataStructures\02.LinearDataStructures\03.LongestSubsequence\obj\Debug\03.LongestSubsequence.exe
+D:\OnCode\DataStructures&Algorithms\02.LinearDataStructures\02.LinearDataStructures\03.LongestSubsequence\obj\Debug\03.LongestSubsequence.pdb
