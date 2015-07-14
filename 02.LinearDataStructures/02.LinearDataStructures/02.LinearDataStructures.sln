@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06.ImplementTheDataStructur
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07.ImplementALinkedList", "07.ImplementALinkedList\07.ImplementALinkedList.csproj", "{58442090-40B5-4E06-9B04-114387A2E53E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08.Labyrinth", "08.Labyrinth\08.Labyrinth.csproj", "{C8B2BABF-6882-408F-B1FA-BE895FC2C129}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{58442090-40B5-4E06-9B04-114387A2E53E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{58442090-40B5-4E06-9B04-114387A2E53E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{58442090-40B5-4E06-9B04-114387A2E53E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8B2BABF-6882-408F-B1FA-BE895FC2C129}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8B2BABF-6882-408F-B1FA-BE895FC2C129}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8B2BABF-6882-408F-B1FA-BE895FC2C129}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8B2BABF-6882-408F-B1FA-BE895FC2C129}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
