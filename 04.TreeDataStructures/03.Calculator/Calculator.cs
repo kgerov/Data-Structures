@@ -60,7 +60,7 @@
                         string lastInsertedOperator = operatorsCollection.Peek();
                         bool shouldAddOperatorToNotation = ShouldAddOperatorToNotation(lastInsertedOperator, currentSymbol);
 
-                        while (shouldAddOperatorToNotation)
+                        while (shouldAddOperatorToNotation && operatorsCollection.Count != 0)
                         {
                             reversePolishNotation.Enqueue(lastInsertedOperator);
                             operatorsCollection.Pop();
@@ -72,6 +72,8 @@
                             lastInsertedOperator = operatorsCollection.Peek();
                             shouldAddOperatorToNotation = ShouldAddOperatorToNotation(lastInsertedOperator, currentSymbol);
                         }
+
+                        operatorsCollection.Push(currentSymbol);
                     }
                 }
                 else if (isParenthesis)
@@ -84,7 +86,7 @@
                     {
                         string lastInsertedOperator = operatorsCollection.Peek();
 
-                        while (lastInsertedOperator != "(")
+                        while (lastInsertedOperator != "(" && operatorsCollection.Count != 0)
                         {
                             reversePolishNotation.Enqueue(lastInsertedOperator);
                             operatorsCollection.Pop();
@@ -98,11 +100,11 @@
 
                         if (lastInsertedOperator == "(")
                         {
-                            throw new ArgumentException("No left parenthesis matched");
+                            operatorsCollection.Pop();
                         }
                         else
                         {
-                            operatorsCollection.Pop();
+                            throw new ArgumentException("No left parenthesis matched");
                         }
                     }
                 }

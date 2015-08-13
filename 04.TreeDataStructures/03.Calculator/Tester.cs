@@ -14,6 +14,9 @@
 
             string expressionTestThree = "2 + 3 * 1.5 - 1";
             Console.WriteLine(Calculator.CalculateExpression(expressionTestThree));
+
+            string expressionTestFour = "3 + 4 * 2 / ( 1 - 5 ) ^ 2 ^ 3";
+            Console.WriteLine(Calculator.CalculateExpression(expressionTestFour));
         }
     }
 }
