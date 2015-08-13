@@ -13,22 +13,20 @@
         {
             supportedOperations = new List<Operator>()
             {
-                new Operator('+', Precedence.Low, Assosiativity.Left),
-                new Operator('-', Precedence.Low, Assosiativity.Left),
-                new Operator('*', Precedence.Medium, Assosiativity.Left),
-                new Operator('/', Precedence.Medium, Assosiativity.Left),
-                new Operator('^', Precedence.High, Assosiativity.Right),
+                new Operator('+', Precedence.Low, Assosiativity.Left, 2),
+                new Operator('-', Precedence.Low, Assosiativity.Left, 2),
+                new Operator('*', Precedence.Medium, Assosiativity.Left, 2),
+                new Operator('/', Precedence.Medium, Assosiativity.Left, 2),
+                new Operator('^', Precedence.High, Assosiativity.Right, 2),
             };
         }
 
         public static decimal CalculateExpression(string expression)
         {
             Queue<string> notation = ConvertExpressionToNotation(expression);
-            Console.WriteLine(String.Join(" ", notation));
-            //decimal expressionValue = ParseNotation(notation);
+            decimal expressionValue = ParseNotation(notation);
 
-            return -1;
-            //return expressionValue;
+            return expressionValue;
         }
 
         private static Queue<string> ConvertExpressionToNotation(string expression)
@@ -124,7 +122,43 @@
 
         private static decimal ParseNotation(Queue<string> notation)
         {
-            throw new NotImplementedException();
+            Stack<decimal> numbersToEvaluate = new Stack<decimal>();
+
+            foreach (var expressionToken in notation)
+            {
+                if (IsNumeric(expressionToken))
+                {
+                    numbersToEvaluate.Push(Convert.ToDecimal(expressionToken));
+                }
+                else if (IsOperator(expressionToken))
+                {
+                    Stack<decimal> arguments = new Stack<decimal>();
+                    Operator currentOperator = supportedOperations.
+                                                FirstOrDefault(x => Convert.ToString(x.Symbol) == expressionToken);
+
+                    if (currentOperator.ArgumentsTaken > numbersToEvaluate.Count)
+                    {
+                        throw new ArgumentException("Invalid expression.");
+                    }
+
+                    for (int i = 0; i < currentOperator.ArgumentsTaken; i++)
+                    {
+                        decimal currentValue = numbersToEvaluate.Pop();
+                        arguments.Push(currentValue);
+                    }
+
+                    decimal result = ExecuteOperation(arguments, currentOperator);
+                    numbersToEvaluate.Push(result);
+                }
+            }
+
+            if (numbersToEvaluate.Count != 1)
+            {
+                throw new ArgumentException("Invalid expression");
+            }
+
+            decimal finalResult = numbersToEvaluate.Pop();
+            return finalResult;
         }
 
         private static bool IsNumeric(string value)
@@ -190,6 +224,30 @@
             }
 
             return ShouldAddOperatorToNotation;
+        }
+
+        private static decimal ExecuteOperation(Stack<decimal> arguments, Operator expresssionOperator)
+        {
+            decimal result = arguments.Pop();
+
+            switch (expresssionOperator.Symbol)
+            {
+                case '+': result += arguments.Pop();
+                    break;
+                case '-': result -= arguments.Pop();
+                    break;
+                case '*': result *= arguments.Pop();
+                    break;
+                case '/': result /= arguments.Pop();
+                    break;
+                case '^':
+                    result = Convert.ToDecimal(Math.Pow(Convert.ToDouble(result), Convert.ToDouble(arguments.Pop())));
+                    break;
+                default:
+                    break;
+            }
+
+            return result;
         }
     }
 }
