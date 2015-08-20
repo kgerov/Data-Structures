@@ -1,6 +1,5 @@
 ﻿namespace _05.TreeAndGraphTraversal
 {
-    using System;
     using System.Collections.Generic;
 
     public class Graph
@@ -47,33 +46,6 @@
             }
 
             return parentCount;
-        }
-
-        //for (int i = 0; i < this.isVisited.Length; i++)
-        //{
-        //    this.isVisited[i] = false;
-        //}
-
-        //for (int node = 0; node < this.graph.Length; node++)
-        //{
-        //    if (!this.isVisited[node])
-        //    {
-        //        DFS(node);
-        //        Console.WriteLine();
-        //    }
-        //}
-
-        private void DFS(int node)
-        {
-            if (!this.isVisited[node])
-            {
-                this.isVisited[node] = true;
-
-                foreach (int child in this.graph[node])
-                {
-                    DFS(child);
-                }
-            }
         }
     }
 }
