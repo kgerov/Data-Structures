@@ -3,7 +3,7 @@
     using System;
     using System.Collections.Generic;
 
-    class Tester
+    class RoundDance
     {
         private static Dictionary<int, List<int>> people = new Dictionary<int, List<int>>();
         private static HashSet<int> isVisited;
