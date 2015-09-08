@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.ProductsInPriceRange", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.StringEditor", "02.StringEditor\02.StringEditor.csproj", "{516D572D-4556-4525-90AC-D74B9F95048F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.FastSearchForStrings", "03.FastSearchForStrings\03.FastSearchForStrings.csproj", "{A84A926A-9465-4248-A648-0E73D4AF3925}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.SearchForStrings", "03.FastSearchForStrings\03.SearchForStrings.csproj", "{A84A926A-9465-4248-A648-0E73D4AF3925}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
