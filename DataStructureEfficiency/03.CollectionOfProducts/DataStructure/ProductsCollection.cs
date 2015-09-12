@@ -7,22 +7,22 @@ namespace _03.CollectionOfProducts.DataStructure
     public class ProductsCollection
     {
         private Dictionary<int, Product> products;
-        private OrderedDictionary<double, SortedSet<Product>> productsByPriceRange;
+        private OrderedDictionary<double, Set<Product>> productsByPriceRange;
         private Dictionary<string, SortedSet<Product>> productsByTitle;
         private Dictionary<string, SortedSet<Product>> productsByTitleAndPrice;
-        private Dictionary<string, OrderedDictionary<double, SortedSet<Product>>> productsByPriceRangeAndTitle;
+        private Dictionary<string, OrderedDictionary<double, Set<Product>>> productsByPriceRangeAndTitle;
         private Dictionary<string, SortedSet<Product>> productsBySupplierAndPrice;
-        private Dictionary<string, OrderedDictionary<double, SortedSet<Product>>> productsByPriceRangeAndSupplier;
+        private Dictionary<string, OrderedDictionary<double, Set<Product>>> productsByPriceRangeAndSupplier;
 
         public ProductsCollection()
         {
             this.products = new Dictionary<int, Product>();
-            this.productsByPriceRange = new OrderedDictionary<double, SortedSet<Product>>();
+            this.productsByPriceRange = new OrderedDictionary<double, Set<Product>>();
             this.productsByTitle = new Dictionary<string, SortedSet<Product>>();
             this.productsByTitleAndPrice = new Dictionary<string, SortedSet<Product>>();
-            this.productsByPriceRangeAndTitle = new Dictionary<string, OrderedDictionary<double, SortedSet<Product>>>();
+            this.productsByPriceRangeAndTitle = new Dictionary<string, OrderedDictionary<double, Set<Product>>>();
             this.productsBySupplierAndPrice = new Dictionary<string, SortedSet<Product>>();
-            this.productsByPriceRangeAndSupplier = new Dictionary<string, OrderedDictionary<double, SortedSet<Product>>>();
+            this.productsByPriceRangeAndSupplier = new Dictionary<string, OrderedDictionary<double, Set<Product>>>();
         }
 
         public int Count
@@ -34,7 +34,7 @@ namespace _03.CollectionOfProducts.DataStructure
         {
             if (products.ContainsKey(id))
             {
-                this.Replace(id, name, supplier, price);
+                this.Remove(id);
             }
 
             Product newProduct = new Product(id, name, supplier, price);
@@ -76,6 +76,7 @@ namespace _03.CollectionOfProducts.DataStructure
             string supplierPriceCombined = this.CombineTwoParams(product.Supplier, product.Price);
 
             this.products.Remove(id);
+            this.productsByTitle[product.Title].Remove(product);
             this.productsByPriceRange[product.Price].Remove(product);
             this.productsByTitleAndPrice[titlePriceCombined].Remove(product);
             this.productsByPriceRangeAndTitle[product.Title][product.Price].Remove(product);
@@ -96,14 +97,17 @@ namespace _03.CollectionOfProducts.DataStructure
         public IEnumerable<Product> FindProducts(int minPrice, int maxPrice)
         {
             var productsInRange = this.productsByPriceRange.Range(minPrice, true, maxPrice, true);
+            SortedSet<Product> sortedProducts = new SortedSet<Product>();
 
             foreach (var productInRange in productsInRange)
             {
                 foreach (var product in productInRange.Value)
                 {
-                    yield return product;
+                    sortedProducts.Add(product);
                 }
             }
+
+            return sortedProducts;
         }
 
         public IEnumerable<Product> FindProducts(string title)
@@ -120,15 +124,24 @@ namespace _03.CollectionOfProducts.DataStructure
 
         public IEnumerable<Product> FindProducts(string title, int minPrice, int maxPrice)
         {
+            SortedSet<Product> sortedProducts = new SortedSet<Product>();
+
+            if (!productsByPriceRangeAndTitle.ContainsKey(title))
+            {
+                return sortedProducts;
+            }
+
             var productsInRange = this.productsByPriceRangeAndTitle[title].Range(minPrice, true, maxPrice, true);
 
             foreach (var productInRange in productsInRange)
             {
                 foreach (var product in productInRange.Value)
                 {
-                    yield return product;
+                    sortedProducts.Add(product);
                 }
-            } 
+            }
+ 
+            return sortedProducts;
         }
 
         public IEnumerable<Product> FindProductsBySupplier(string supplier, double price)
@@ -140,20 +153,24 @@ namespace _03.CollectionOfProducts.DataStructure
 
         public IEnumerable<Product> FindProductsBySupplier(string supplier, int minPrice, int maxPrice)
         {
+            SortedSet<Product> sortedProducts = new SortedSet<Product>();
+
+            if (!productsByPriceRangeAndTitle.ContainsKey(supplier))
+            {
+                return sortedProducts;
+            }
+
             var productsInRange = this.productsByPriceRangeAndTitle[supplier].Range(minPrice, true, maxPrice, true);
 
             foreach (var productInRange in productsInRange)
             {
                 foreach (var product in productInRange.Value)
                 {
-                    yield return product;
+                    sortedProducts.Add(product);
                 }
-            } 
-        }
+            }
 
-        private void Replace(int id, string name, string supplier, double price)
-        {
-            throw new NotImplementedException();
+            return sortedProducts;
         }
 
         private string CombineTwoParams(string text, double number)
